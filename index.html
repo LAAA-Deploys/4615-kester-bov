@@ -107,8 +107,14 @@
   .info-callout strong{color:#0a2540}
   .warn-callout{background:#fbeaea;border-left:4px solid #a02020;padding:14px 18px;border-radius:0 4px 4px 0;margin:14px 0;font-size:14px;color:#1a1a1a}
   .warn-callout strong{color:#8a1010}
-  .prelim-banner{background:#fff4d6;border:1px solid #e6c98a;border-radius:6px;padding:12px 16px;font-size:13px;color:#7a5f1a;margin-bottom:24px}
+  .prelim-banner{background:#fff4d6;border:1px solid #e6c98a;border-radius:6px;padding:12px 16px;font-size:13px;color:#7a5f1a;margin-bottom:20px}
   .prelim-banner strong{color:#5a4509}
+  .tabnav{position:sticky;top:0;z-index:50;background:#0a2540;border-bottom:3px solid #b8985a;margin:0 -24px 24px;padding:0 12px;display:flex;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:6px 6px 0 0}
+  .tabnav button{flex:0 0 auto;background:transparent;border:none;color:#a8b3c2;font-size:12.5px;font-weight:600;letter-spacing:.5px;padding:14px 15px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-3px;white-space:nowrap;font-family:inherit;text-transform:uppercase;transition:color .15s}
+  .tabnav button:hover{color:#fff}
+  .tabnav button.active{color:#fff;border-bottom-color:#b8985a}
+  .panel{display:none}
+  .panel.active{display:block}
   .compare-table th:first-child{width:38%}
   .compare-table td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   .compare-table tr.hl td{font-weight:700;background:#e8f4ea;color:#1f6b35;border-top:2px solid #1f6b35}
@@ -135,6 +141,8 @@
     body{background:#fff}
     section{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}
     header{background:#0a2540 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .tabnav{display:none}
+    .panel{display:block !important}
   }
   footer{background:#0a2540;color:#a8b3c2;padding:32px 0;text-align:center;font-size:13px;border-top:4px solid #b8985a}
   footer .wrap p{margin-bottom:6px}
@@ -163,7 +171,18 @@
   <strong>Preliminary draft.</strong> Land-value conclusions are anchored to the public assessor record, prior transaction history, and zoning-derived unit yields; the verified closed land-sale comp set (CoStar / MLS) is being assembled and will replace the preliminary range. Unit counts and development pro formas are planning-level estimates on stated assumptions, pending an architect's feasibility study &mdash; not a guarantee of cost, yield, or value.
 </div>
 
-<section>
+<nav class="tabnav" id="tabnav">
+  <button data-target="overview" class="active">Overview</button>
+  <button data-target="site">The Site</button>
+  <button data-target="pathways">Pathways</button>
+  <button data-target="proforma">Pro Forma</button>
+  <button data-target="diligence">Diligence</button>
+  <button data-target="valuation">Valuation</button>
+  <button data-target="inventory">Inventory</button>
+  <button data-target="team">Team</button>
+</nav>
+
+<section class="panel active" data-tab="overview">
   <h2>Executive Summary</h2>
   <p>This Broker Opinion of Value evaluates <strong>4615 N Kester Avenue</strong> &mdash; a <strong>6,710-square-foot, R3-1 vacant development parcel</strong> in prime Sherman Oaks, north of Ventura Boulevard. The site is unimproved land with no relocation exposure and sits within a stack of housing-production incentives (TOC Tier 3, ED-1 eligible, AB 2334 / AB 2097, High Quality Transit Corridor, TCAC &ldquo;Highest&rdquo; opportunity area). We frame value around two distinct, market-tested build pathways a buyer can underwrite on day one.</p>
   <div class="takeaways">
@@ -186,7 +205,7 @@
   </div>
 </section>
 
-<section>
+<section class="panel" data-tab="site">
   <div class="hero-img" style="background-image:url('images/hero.jpg')">
     <div class="hero-cap">4615 N Kester Ave &mdash; vacant R3 parcel, view from Kester Avenue</div>
   </div>
@@ -215,8 +234,8 @@
   <p class="footer-note">Source: ZIMAS Parcel Profile Report (City of Los Angeles Dept. of City Planning), pulled 5/29/2026; LA County Assessor. Aerial via Google Maps.</p>
 </section>
 
-<section>
-  <h2>Two Development Pathways</h2>
+<section class="panel" data-tab="pathways">
+  <h2>Three Development Pathways</h2>
   <p>The land underwrites cleanly two ways. Both avoid discretionary entitlement, giving a buyer a shorter, lower-risk path to vertical construction. Unit counts shown are planning-level and subject to an architect's site study.</p>
 
   <div class="pathway-grid">
@@ -280,7 +299,7 @@
   </div>
 </section>
 
-<section>
+<section class="panel" data-tab="proforma">
   <h2>Development Pro Forma &mdash; Cost &amp; Profit by Pathway</h2>
   <p>Each pathway is underwritten below from a common <strong>$1,600,000 land basis</strong> (the preliminary midpoint) so the seller can see what a developer nets under each plan. Figures are planning-level and rest on the stated cost, exit, and rent assumptions &mdash; not verified comps.</p>
 
@@ -359,7 +378,7 @@
   <p class="footer-note"><strong>Pro forma assumptions (planning-level):</strong> construction $275/SF for-sale, $260/SF duplex, ~$310/SF CHIP podium; for-sale exit ~$800/SF blended (home + ADU); duplex rents $5,500 (3BR/3BA) and $2,500 (1BR/1BA ADU); CHIP blended market/affordable rents; 4.75% exit cap; 5% sales cost; ~18% target developer margin. All figures are estimates subject to an architect's feasibility study, a CHIP density-bonus eligibility study, and the verified land-comp set. They are not a guarantee of yield, cost, or value.</p>
 </section>
 
-<section>
+<section class="panel" data-tab="diligence">
   <h2>Key Diligence Items</h2>
   <div class="warn-callout">
     <strong>Ellis Act &amp; Housing-Element replacement.</strong> ZIMAS flags an Ellis Act filing dated 11/07/2018 and identifies the parcel as a Housing Element site requiring replacement (SB 166: Appendix 4.3 = 11 units; Appendix 4.1 = 1.63 VLI). Although the site is now vacant land, a new residential project may be required to replace previously-removed units and/or provide affordable replacement units. <strong>This is the single most important value-affecting item</strong> and should be confirmed with the City (HCIDLA / Planning) before a buyer finalizes a build program. The ED-1 (100% affordable) pathway and density-bonus programs are common ways to satisfy or absorb a replacement obligation.
@@ -372,7 +391,7 @@
   </ul>
 </section>
 
-<section>
+<section class="panel" data-tab="valuation">
   <h2>Land-Value Basis</h2>
   <p>This is a land transaction &mdash; value is set by what a developer pays for the dirt and the entitlement optionality, not by a finished-product cap rate. Pending the verified closed land-comp set, the following <strong>public, verifiable anchors</strong> frame the range:</p>
   <div class="scroll">
@@ -413,7 +432,7 @@
   </div>
 </section>
 
-<section>
+<section class="panel" data-tab="valuation">
   <h2>Pricing Recommendation</h2>
   <p>Anchoring to the county's $190/SF assessed basis and adding a premium for the development optionality (two by-right pathways, TOC Tier 3, ED-1, prime north-of-the-boulevard location), while discounting for the Housing-Element replacement obligation and liquefaction soils, supports the following <strong>preliminary</strong> land-value range. This is a placeholder to be confirmed against the verified land-comp set.</p>
 
@@ -437,7 +456,7 @@
   </div>
 </section>
 
-<section>
+<section class="panel" data-tab="inventory">
   <h2>LAAA Land &amp; Development Inventory</h2>
   <p>The LAAA Team actively markets for-sale development land and ground-up projects across Los Angeles County. Current land &amp; development listings (<a href="https://laaa.com/listings" target="_blank" rel="noopener" style="color:#0a4a8a;text-decoration:none">laaa.com/listings</a>):</p>
   <div class="inv-grid">
@@ -535,7 +554,7 @@
   <p class="footer-note">Source: laaa.com/listings, current as of May 2026. See the full active list &mdash; including multifamily &mdash; at <a href="https://laaa.com/listings" target="_blank" rel="noopener" style="color:#0a4a8a;text-decoration:none">laaa.com/listings</a>.</p>
 </section>
 
-<section>
+<section class="panel" data-tab="team">
   <div class="section-tag">Listing Team</div>
   <h2>The LA Apartment Advisors Team</h2>
   <p>LA Apartment Advisors (LAAA) is a Marcus &amp; Millichap investment sales team specializing in multifamily, land, and for-sale development transactions across Los Angeles County. With 458+ transactions and over $1.46 billion in closed volume, we help property owners make confident investment decisions &mdash; whether buying, selling, or exploring the market.</p>
@@ -592,5 +611,26 @@
     <p style="margin-top:14px;font-size:11px;line-height:1.5;max-width:780px;margin-left:auto;margin-right:auto;color:#7a8699">This information has been secured from sources believed to be reliable, but no representations are made by Marcus &amp; Millichap as to the accuracy of the information. References to square footage, age, zoning, unit yields, and pricing are approximate and preliminary; buyer must verify all information independently and bears all risk for any inaccuracies. Nothing herein constitutes legal, tax, or development-feasibility advice. Marcus &amp; Millichap is a service mark of Marcus &amp; Millichap Real Estate Investment Services, Inc. &copy; 2026 Marcus &amp; Millichap. All rights reserved.</p>
   </div>
 </footer>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabnav button'));
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  var nav=document.getElementById('tabnav');
+  function show(id){
+    panels.forEach(function(p){p.classList.toggle('active',p.getAttribute('data-tab')===id);});
+    tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-target')===id);});
+    if(location.hash.slice(1)!==id){history.replaceState(null,'','#'+id);}
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      show(t.getAttribute('data-target'));
+      var y=nav.getBoundingClientRect().top+window.pageYOffset-1;
+      if(window.pageYOffset>y){window.scrollTo({top:y,behavior:'smooth'});}
+    });
+  });
+  var initial=location.hash.slice(1);
+  show(tabs.some(function(t){return t.getAttribute('data-target')===initial;})?initial:'overview');
+})();
+</script>
 </body>
 </html>
