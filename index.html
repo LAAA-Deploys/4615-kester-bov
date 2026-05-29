@@ -87,11 +87,13 @@
   .yield-table td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   .yield-table tr.total td{font-weight:700;background:#f0eede;color:#0a2540;border-top:2px solid #b8985a}
   .yield-table tr.subtotal td{font-weight:600;background:#f8fafc}
-  .pathway-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:18px 0 8px}
+  .yield-table tr.profit td{font-weight:700;background:#e8f4ea;color:#1f6b35;border-top:2px solid #1f6b35}
+  .pathway-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 8px}
   .pathway{border:1px solid #e6e9ef;border-radius:8px;padding:0;overflow:hidden;display:flex;flex-direction:column}
-  .pathway-head{padding:18px 20px;color:#fff}
+  .pathway-head{padding:16px 18px;color:#fff}
   .pw-a .pathway-head{background:linear-gradient(135deg,#0a2540,#143b6b)}
   .pw-b .pathway-head{background:linear-gradient(135deg,#5a4a1f,#8a6f2a)}
+  .pw-c .pathway-head{background:linear-gradient(135deg,#1f5e3a,#2f8a55)}
   .pathway-head .pw-tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.85;margin-bottom:6px}
   .pathway-head .pw-name{font-size:18px;font-weight:700;line-height:1.2}
   .pathway-head .pw-units{font-size:13px;opacity:.9;margin-top:4px}
@@ -107,6 +109,17 @@
   .warn-callout strong{color:#8a1010}
   .prelim-banner{background:#fff4d6;border:1px solid #e6c98a;border-radius:6px;padding:12px 16px;font-size:13px;color:#7a5f1a;margin-bottom:24px}
   .prelim-banner strong{color:#5a4509}
+  .compare-table th:first-child{width:38%}
+  .compare-table td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .compare-table tr.hl td{font-weight:700;background:#e8f4ea;color:#1f6b35;border-top:2px solid #1f6b35}
+  .inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+  .inv-item{background:#f8fafc;border:1px solid #e6e9ef;border-radius:6px;padding:16px;border-top:3px solid #b8985a;display:flex;flex-direction:column}
+  .inv-addr{font-size:14px;font-weight:700;color:#0a2540;margin-bottom:4px;line-height:1.25}
+  .inv-type{font-size:12px;color:#666;margin-bottom:12px;flex:1;line-height:1.45}
+  .inv-link{font-size:11px;font-weight:700;color:#0a4a8a;text-decoration:none;text-transform:uppercase;letter-spacing:.6px}
+  .inv-link:hover{text-decoration:underline}
+  @media (max-width:760px){.inv-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.inv-grid{grid-template-columns:1fr}}
   @media (max-width:760px){.team-leaders{grid-template-columns:1fr}.team-roster{grid-template-columns:repeat(2,1fr)}.pathway-grid{grid-template-columns:1fr}.price-compare{grid-template-columns:1fr}}
   @media (max-width:640px){
     header{padding:32px 0 40px}
@@ -147,7 +160,7 @@
 <div class="wrap">
 
 <div class="prelim-banner">
-  <strong>Preliminary draft.</strong> Land-value conclusions below are anchored to the public assessor record, prior transaction history, and zoning-derived unit yields. The verified closed land-sale comp set (CoStar / MLS) is being assembled and will replace the preliminary range. Unit counts are planning-level estimates pending an architect's site study.
+  <strong>Preliminary draft.</strong> Land-value conclusions are anchored to the public assessor record, prior transaction history, and zoning-derived unit yields; the verified closed land-sale comp set (CoStar / MLS) is being assembled and will replace the preliminary range. Unit counts and development pro formas are planning-level estimates on stated assumptions, pending an architect's feasibility study &mdash; not a guarantee of cost, yield, or value.
 </div>
 
 <section>
@@ -156,11 +169,11 @@
   <div class="takeaways">
     <div class="tk">
       <div class="tk-num">FINDING 01</div>
-      <div class="tk-text"><strong>Two clean by-right pathways.</strong> (A) a fee-simple <strong>small-lot subdivision</strong> of detached for-sale homes, or (B) a ministerial <strong>double-duplex + 2 ADUs (6 units)</strong> hold-or-sell play &mdash; each buildable without discretionary entitlement.</p></div>
+      <div class="tk-text"><strong>Three buildable pathways.</strong> (A) a <strong>4-home SB 1123</strong> for-sale subdivision (1,750 SF homes + 500 SF ADUs), (B) a by-right <strong>double-duplex + 2 ADUs (6 units)</strong> rental, or (C) a <strong>CHIP mixed-income</strong> ~16&ndash;20-unit max-density build.</p></div>
     </div>
     <div class="tk">
       <div class="tk-num">FINDING 02</div>
-      <div class="tk-text"><strong>Prime, transit-rich Sherman Oaks dirt.</strong> R3-1 with Medium Residential GP, TOC Tier 3, and ED-1 eligibility &mdash; a flexible density envelope (base R3 supports up to ~8 units; bonus programs add upside).</p></div>
+      <div class="tk-text"><strong>For-sale is the profit play.</strong> At a $1.6M land basis, the 4-home SB 1123 plan pro-formas to a <strong>~$1.06M developer profit (19% on cost)</strong> &mdash; the duplex is a 5.0%-yield hold; CHIP maximizes units and satisfies replacement.</p></div>
     </div>
     <div class="tk">
       <div class="tk-num">FINDING 03</div>
@@ -209,67 +222,141 @@
   <div class="pathway-grid">
     <div class="pathway pw-a">
       <div class="pathway-head">
-        <div class="pw-tag">Pathway A</div>
-        <div class="pw-name">Small-Lot Subdivision</div>
-        <div class="pw-units">Fee-simple detached for-sale homes</div>
+        <div class="pw-tag">Pathway A &middot; For-Sale</div>
+        <div class="pw-name">4-Home SB 1123 Subdivision</div>
+        <div class="pw-units">4 homes + 4 ADUs &middot; 8 units</div>
       </div>
       <div class="pathway-body">
         <ul>
-          <li><strong>For-sale exit.</strong> Subdivide into individual fee-simple small lots under the LA Small Lot Subdivision Ordinance; sell each home to a retail buyer.</li>
-          <li><strong>Planning-level yield: ~4&ndash;6 detached homes</strong>, 3-story product (~1,600&ndash;1,900 SF each) with attached garages.</li>
-          <li><strong>Highest per-door value</strong> &mdash; retail homebuyers, not investors, set the price.</li>
-          <li>Longer build/sell cycle; requires a tract/parcel map and individual home closings.</li>
+          <li><strong>Four detached homes @ 1,750 SF</strong>, each with a <strong>500 SF ADU</strong> &mdash; fee-simple, sold individually to retail buyers.</li>
+          <li><strong>SB 1123 / SB 684 ministerial</strong> small-lot subdivision &mdash; vacant urban residential land in a Transit Priority Area; no discretionary review.</li>
+          <li><strong>Highest per-door value</strong> &mdash; retail homebuyers set the price; the ADU adds owner income.</li>
         </ul>
-        <div class="pw-metric"><span>Product</span><span>4&ndash;6 SFR homes</span></div>
-        <div class="pw-metric"><span>Tenure</span><span>Fee-simple for-sale</span></div>
-        <div class="pw-metric"><span>Entitlement</span><span>Small Lot Ord. / map</span></div>
+        <div class="pw-metric"><span>Buildable</span><span>9,000 SF</span></div>
+        <div class="pw-metric"><span>Exit</span><span>For-sale sellout</span></div>
+        <div class="pw-metric"><span>Profit (base)</span><span>~$1.06M</span></div>
       </div>
     </div>
 
     <div class="pathway pw-b">
       <div class="pathway-head">
-        <div class="pw-tag">Pathway B</div>
+        <div class="pw-tag">Pathway B &middot; Rental</div>
         <div class="pw-name">Double Duplex + 2 ADUs</div>
-        <div class="pw-units">6 units &middot; ministerial / by-right</div>
+        <div class="pw-units">4 &times; 3BR/3BA + 2 &times; 1BR/1BA ADU &middot; 6 units</div>
       </div>
       <div class="pathway-body">
         <ul>
-          <li><strong>Fastest path to units.</strong> Two duplex structures (4 units) plus two ADUs = <strong>6 units</strong>, built by-right with no discretionary review.</li>
-          <li><strong>Hold or sell.</strong> Stabilize as a 6-unit rental, or sell the completed project to an income buyer.</li>
-          <li><strong>Lower cost &amp; risk</strong> &mdash; no subdivision map, simpler construction, reduced parking under AB 2097.</li>
-          <li>Income-driven exit values the project on rents, not retail $/SF.</li>
+          <li><strong>Two duplexes &mdash; four 3BR/3BA units</strong> &mdash; plus <strong>two 1BR/1BA ADUs for rent</strong> = 6 units.</li>
+          <li><strong>Fastest, lowest-risk path</strong> &mdash; by-right ministerial, no subdivision map, reduced parking under AB 2097.</li>
+          <li><strong>Hold for cash flow</strong> or sell stabilized to an income buyer; valued on rents, not retail $/SF.</li>
         </ul>
-        <div class="pw-metric"><span>Product</span><span>4 units + 2 ADUs</span></div>
-        <div class="pw-metric"><span>Tenure</span><span>Rental (hold/sell)</span></div>
-        <div class="pw-metric"><span>Entitlement</span><span>By-right ministerial</span></div>
+        <div class="pw-metric"><span>Buildable</span><span>6,600 SF</span></div>
+        <div class="pw-metric"><span>Exit</span><span>Rental hold / sale</span></div>
+        <div class="pw-metric"><span>Yield-on-cost</span><span>~5.0%</span></div>
+      </div>
+    </div>
+
+    <div class="pathway pw-c">
+      <div class="pathway-head">
+        <div class="pw-tag">Pathway C &middot; Max Density</div>
+        <div class="pw-name">CHIP Mixed-Income</div>
+        <div class="pw-units">~16&ndash;20 units &middot; 4&ndash;5 stories</div>
+      </div>
+      <div class="pathway-body">
+        <ul>
+          <li><strong>Citywide Housing Incentive Program (MIIP)</strong> &mdash; site sits in <strong>TOIA Tier 2 + Opportunity Corridor OC-2</strong>, a Higher-Opportunity area (TCAC &ldquo;Highest&rdquo;).</li>
+          <li><strong>Density bonus from ~90%</strong> over base in exchange for a covenanted affordable set-aside; <strong>no parking minimum</strong>; corridor podium scale.</li>
+          <li><strong>Maximizes units &amp; gross value</strong> and cleanly satisfies the Housing-Element replacement obligation &mdash; a patient-capital / mission-developer play.</li>
+        </ul>
+        <div class="pw-metric"><span>Buildable</span><span>~16,500 SF</span></div>
+        <div class="pw-metric"><span>Exit</span><span>Rental hold</span></div>
+        <div class="pw-metric"><span>Affordability</span><span>Set-aside req'd</span></div>
       </div>
     </div>
   </div>
 
   <div class="info-callout">
-    <strong>Upside optionality (not the base case):</strong> as a TOC Tier 3 + ED-1 eligible site on a High Quality Transit Corridor, the parcel can also support a density-bonus or 100% affordable program above the by-right counts shown &mdash; a third path a mission-driven or bonus-savvy developer can pursue for higher unit yield.
+    <strong>How to read these:</strong> Pathways A and B are <strong>by-right</strong> &mdash; a buyer can underwrite them today with no discretionary entitlement. Pathway C (CHIP) unlocks the <strong>most units</strong> and addresses the replacement obligation, but its yield is indicative and requires a density-bonus eligibility study. Full cost-and-profit pro formas for each follow below.
   </div>
 </section>
 
 <section>
-  <h2>Density &amp; Yield Framework</h2>
-  <p>R3 base density permits one dwelling unit per 800 SF of lot area. Applied to the 6,709.7 SF parcel, that supports a theoretical base of approximately eight units before bonuses &mdash; comfortably accommodating either pathway.</p>
+  <h2>Development Pro Forma &mdash; Cost &amp; Profit by Pathway</h2>
+  <p>Each pathway is underwritten below from a common <strong>$1,600,000 land basis</strong> (the preliminary midpoint) so the seller can see what a developer nets under each plan. Figures are planning-level and rest on the stated cost, exit, and rent assumptions &mdash; not verified comps.</p>
+
   <div class="scroll">
-  <table class="yield-table">
+  <table class="compare-table">
     <thead>
-      <tr><th>Metric</th><th class="num">Pathway A &mdash; Small Lot</th><th class="num">Pathway B &mdash; Duplexes + ADUs</th></tr>
+      <tr><th>Metric</th><th class="num">A &middot; 4-Home SB 1123</th><th class="num">B &middot; Double Duplex</th><th class="num">C &middot; CHIP Mixed-Income</th></tr>
     </thead>
     <tbody>
-      <tr><td>Residential units</td><td class="num">4&ndash;6 homes</td><td class="num">6 (4 + 2 ADUs)</td></tr>
-      <tr><td>Tenure / exit</td><td class="num">Fee-simple for-sale</td><td class="num">Rental hold or sale</td></tr>
-      <tr><td>Entitlement risk</td><td class="num">Map required</td><td class="num">By-right (lowest)</td></tr>
-      <tr><td>Relative build cost</td><td class="num">Higher (finish-grade)</td><td class="num">Lower</td></tr>
-      <tr><td>Value driver</td><td class="num">Retail home $/SF</td><td class="num">Rents / cap rate</td></tr>
-      <tr class="subtotal"><td>Base R3 envelope</td><td class="num" colspan="2">~8 units (1 unit / 800 SF) &middot; bonus programs add upside</td></tr>
+      <tr><td>Units</td><td class="num">8 (4 homes + 4 ADUs)</td><td class="num">6 (4&times;3/3 + 2 ADU)</td><td class="num">~18 (~14 mkt + 4 aff)</td></tr>
+      <tr><td>Buildable area</td><td class="num">9,000 SF</td><td class="num">6,600 SF</td><td class="num">~16,500 SF</td></tr>
+      <tr><td>Exit</td><td class="num">For-sale sellout</td><td class="num">Rental hold / sale</td><td class="num">Rental hold</td></tr>
+      <tr><td>Land cost</td><td class="num">$1,600,000</td><td class="num">$1,600,000</td><td class="num">$1,600,000</td></tr>
+      <tr><td>Development cost (ex-land)</td><td class="num">$3,986,000</td><td class="num">$2,797,000</td><td class="num">~$7,109,000</td></tr>
+      <tr class="subtotal"><td>Total project cost</td><td class="num">$5,586,000</td><td class="num">$4,397,000</td><td class="num">~$8,709,000</td></tr>
+      <tr><td>Gross value</td><td class="num">$7,000,000 sellout</td><td class="num">$4,632,000 stabilized</td><td class="num">~$7,900,000 stabilized</td></tr>
+      <tr class="hl"><td>Developer profit</td><td class="num">$1,064,000</td><td class="num">$235,000</td><td class="num">Hold play &mdash; see note</td></tr>
+      <tr><td>Margin on cost / yield</td><td class="num">19.0%</td><td class="num">5.4% &middot; 5.0% YoC</td><td class="num">~4.3% YoC</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="footer-note">Yields are planning-level, derived from R3-1 base density and standard by-right configurations; confirm with an architect's feasibility study and a current title report. Pathway A home count depends on small-lot geometry and the 17-ft building line.</p>
+  <p class="footer-note">Profit = net value less total project cost (incl. land). &ldquo;YoC&rdquo; = stabilized NOI &divide; total project cost. Pathway C maximizes units and gross value but pencils as a long-term hold / affordable-developer play at current construction costs &mdash; see note below.</p>
+
+  <h3>Pathway A &mdash; 4-Home SB 1123 (For-Sale)</h3>
+  <div class="scroll">
+  <table class="yield-table">
+    <thead><tr><th>Line item</th><th class="num">Basis</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Land</td><td class="num">Preliminary midpoint</td><td class="num">$1,600,000</td></tr>
+      <tr><td>Hard construction &mdash; 4 homes + 4 ADUs</td><td class="num">9,000 SF &times; $275</td><td class="num">$2,475,000</td></tr>
+      <tr><td>Garages</td><td class="num">1,760 SF &times; $150</td><td class="num">$264,000</td></tr>
+      <tr><td>Site work &amp; utilities</td><td class="num">$20/SF &times; 6,710 SF</td><td class="num">$134,000</td></tr>
+      <tr><td>Soft costs &mdash; map, CDs, permits, fees, A&amp;E</td><td class="num">flat</td><td class="num">$550,000</td></tr>
+      <tr><td>Financing &amp; carry</td><td class="num">~10%</td><td class="num">$345,000</td></tr>
+      <tr><td>Contingency</td><td class="num">5% hard + site</td><td class="num">$144,000</td></tr>
+      <tr><td>G&amp;A / project mgmt</td><td class="num">3% hard</td><td class="num">$74,000</td></tr>
+      <tr class="total"><td>Total project cost (incl. land)</td><td></td><td class="num">$5,586,000</td></tr>
+      <tr><td>Gross sellout &mdash; 4 homes @ ~$1,750,000</td><td class="num">1,750 SF home + 500 SF ADU</td><td class="num">$7,000,000</td></tr>
+      <tr><td>Less sales &amp; marketing</td><td class="num">5%</td><td class="num">($350,000)</td></tr>
+      <tr class="subtotal"><td>Net sellout</td><td></td><td class="num">$6,650,000</td></tr>
+      <tr class="profit"><td>Developer profit</td><td class="num">19.0% on cost</td><td class="num">$1,064,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Pathway B &mdash; Double Duplex + 2 ADUs (Rental)</h3>
+  <div class="scroll">
+  <table class="yield-table">
+    <thead><tr><th>Line item</th><th class="num">Basis</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Land</td><td class="num">Preliminary midpoint</td><td class="num">$1,600,000</td></tr>
+      <tr><td>Hard construction &mdash; 4 units + 2 ADUs</td><td class="num">6,600 SF &times; $260</td><td class="num">$1,716,000</td></tr>
+      <tr><td>Parking / garages</td><td class="num">flat</td><td class="num">$150,000</td></tr>
+      <tr><td>Site work &amp; utilities</td><td class="num">$20/SF &times; 6,710 SF</td><td class="num">$134,000</td></tr>
+      <tr><td>Soft costs</td><td class="num">flat (no map)</td><td class="num">$425,000</td></tr>
+      <tr><td>Financing &amp; carry</td><td class="num">~10%</td><td class="num">$228,000</td></tr>
+      <tr><td>Contingency</td><td class="num">5% hard + site</td><td class="num">$93,000</td></tr>
+      <tr><td>G&amp;A / project mgmt</td><td class="num">3% hard</td><td class="num">$51,000</td></tr>
+      <tr class="total"><td>Total project cost (incl. land)</td><td></td><td class="num">$4,397,000</td></tr>
+      <tr><td>Gross scheduled income</td><td class="num">4 &times; $5,500 + 2 &times; $2,500 &times;12</td><td class="num">$324,000</td></tr>
+      <tr><td>Less vacancy</td><td class="num">3%</td><td class="num">($9,720)</td></tr>
+      <tr><td>Less operating expenses</td><td class="num">~30%</td><td class="num">($94,284)</td></tr>
+      <tr class="subtotal"><td>Net operating income</td><td></td><td class="num">$219,996</td></tr>
+      <tr><td>Stabilized value @ 4.75% cap</td><td class="num">NOI &divide; 0.0475</td><td class="num">$4,632,000</td></tr>
+      <tr class="profit"><td>Build-to-sell profit &middot; 5.0% yield-on-cost</td><td class="num">value &minus; cost</td><td class="num">$235,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="footer-note">Pathway B's strength is the hold: a 5.0% yield-on-cost against a ~4.75% market cap, plus durable cash flow and depreciation. The merchant build-to-sell margin is thin &mdash; this plan rewards a long-term owner more than a flipper.</p>
+
+  <h3>Pathway C &mdash; CHIP Mixed-Income (Maximum Density)</h3>
+  <div class="info-callout">
+    <strong>What can be built:</strong> Under CHIP's Mixed-Income Incentive Program, the site's <strong>TOIA Tier 2 + OC-2, Higher-Opportunity</strong> designation supports a density bonus starting around <strong>90% over base</strong> with a covenanted affordable set-aside, <strong>no parking minimum</strong>, and corridor podium scale &mdash; a planning-level envelope of roughly <strong>16&ndash;20 units across ~4&ndash;5 stories</strong> (~16,500 SF). Indicative economics: ~$8.7M total project cost, ~$375K stabilized NOI, ~$7.9M stabilized value (4.75% cap) &mdash; a <strong>~4.3% yield-on-cost</strong>. At today's podium construction costs the merchant build-to-sell margin is thin to negative, so CHIP pencils best for <strong>patient or mission-driven capital</strong>. Its real value here is twofold: it produces the <strong>most units and highest gross value</strong>, and the affordable component is the cleanest way to <strong>satisfy the Housing-Element replacement obligation</strong> flagged below.
+  </div>
+
+  <p class="footer-note"><strong>Pro forma assumptions (planning-level):</strong> construction $275/SF for-sale, $260/SF duplex, ~$310/SF CHIP podium; for-sale exit ~$800/SF blended (home + ADU); duplex rents $5,500 (3BR/3BA) and $2,500 (1BR/1BA ADU); CHIP blended market/affordable rents; 4.75% exit cap; 5% sales cost; ~18% target developer margin. All figures are estimates subject to an architect's feasibility study, a CHIP density-bonus eligibility study, and the verified land-comp set. They are not a guarantee of yield, cost, or value.</p>
 </section>
 
 <section>
@@ -348,6 +435,44 @@
     </div>
     <p style="margin-top:14px;margin-bottom:0;font-size:14px"><strong>Strategic note:</strong> The recommended marketing approach leads with the <em>optionality</em> &mdash; two shovel-ready-adjacent build pathways plus a density-bonus/ED-1 upside &mdash; to a buyer pool of small-lot for-sale developers and by-right merchant builders active in the South Valley. The Housing-Element replacement question should be resolved (or pre-packaged with a compliant program) before or early in marketing, as it directly governs which buyers can underwrite the site. The range will be tightened once the verified closed land-comp set is in hand.</p>
   </div>
+</section>
+
+<section>
+  <h2>LAAA Land &amp; Development Inventory</h2>
+  <p>The LAAA Team actively markets for-sale development land and ground-up projects across Los Angeles County. A selection of current and recent listings:</p>
+  <div class="inv-grid">
+    <div class="inv-item">
+      <div class="inv-addr">6540 N Shoup Ave<br><span style="font-weight:400;color:#666">West Hills, 91307</span></div>
+      <div class="inv-type">10-home SB 1123 small-lot subdivision with attached ADUs &mdash; ministerial, plans in process.</div>
+      <a class="inv-link" href="https://6540-shoup.laaa.com" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+    <div class="inv-item">
+      <div class="inv-addr">601 Pearl Street<br><span style="font-weight:400;color:#666">Ojai</span></div>
+      <div class="inv-type">9-home shovel-ready for-sale development in a supply-constrained market.</div>
+      <a class="inv-link" href="https://601pearl.laaa.com" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+    <div class="inv-item">
+      <div class="inv-addr">631 W 6th Street<br><span style="font-weight:400;color:#666">San Pedro</span></div>
+      <div class="inv-type">By-right raw-land development site with two construction pathways.</div>
+      <a class="inv-link" href="https://631-w-6th.laaa.com" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+    <div class="inv-item">
+      <div class="inv-addr">22159 Pacific Coast Hwy<br><span style="font-weight:400;color:#666">Malibu</span></div>
+      <div class="inv-type">8-unit fire-rebuild land under Malibu Ordinance 524 &mdash; ocean-adjacent.</div>
+      <a class="inv-link" href="https://22159-pch-malibu.laaa.com" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+    <div class="inv-item">
+      <div class="inv-addr">8734 Burnet Ave<br><span style="font-weight:400;color:#666">North Hills</span></div>
+      <div class="inv-type">20-unit condo-conversion for-sale sell-out opportunity.</div>
+      <a class="inv-link" href="https://8734-burnet.laaa.com" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+    <div class="inv-item">
+      <div class="inv-addr">2600 S Robertson Blvd<br><span style="font-weight:400;color:#666">Los Angeles</span></div>
+      <div class="inv-type">ED-1 mixed-use development &mdash; 150 units, shovel-ready affordable.</div>
+      <a class="inv-link" href="https://2600-robertson-om.laaa.com" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+  </div>
+  <p class="footer-note">Inventory current as of May 2026 &mdash; contact the team for the full active list and off-market opportunities.</p>
 </section>
 
 <section>
